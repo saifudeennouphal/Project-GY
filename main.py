@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import json
+from PIL import Image
 
 data=pd.read_csv('final_data.csv')
 st.markdown('# COMPTYRE \n ## Compare the Tyres here!!!!! \n ### find your perfect one')
