@@ -10,7 +10,7 @@ veh=data['Car Model'].unique()
 #img1=Image.open('Screenshot from 2023-04-09 22-37-14.png')
 img2=Image.open('img5.png')
 
-st.image(img1)
+#st.image(img1)
 st.image(img2)
 
 option = st.selectbox(' #### Which is your car?',veh)
