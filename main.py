@@ -3,11 +3,11 @@ import pandas as pd
 from PIL import Image
 
 data=pd.read_csv('final_data.csv')
-st.markdown('# COMPTYRE \n ## Compare the Tyres here!!!!! \n ### find your perfect one')
+#st.markdown('# COMPTYRE \n ## Compare the Tyres here!!!!! \n ### find your perfect one')
 
 veh=data['Car Model'].unique()
 
-img1=Image.open('Screenshot from 2023-04-09 22-37-14.png')
+#img1=Image.open('Screenshot from 2023-04-09 22-37-14.png')
 img2=Image.open('img5.png')
 
 st.image(img1)
