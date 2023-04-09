@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
+
+st.set_page_config(
+     page_title="CompTyre",
+     page_icon="ð§",
+     layout="wide",
+     initial_sidebar_state="expanded",
+     menu_items={
+         'Report a bug': "https://www.linkedin.com/in/saifudheen-nouphal-2b33a5144/",
+         'About': "# Comparing the features and price web app"
+     }
+ )
+
 data=pd.read_csv('final_data.csv')
 #st.markdown('# COMPTYRE \n ## Compare the Tyres here!!!!! \n ### find your perfect one')
 
