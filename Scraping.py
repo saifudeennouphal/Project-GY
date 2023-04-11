@@ -8,7 +8,50 @@ import pandas as pd
 driver = webdriver.Chrome(ChromeDriverManager().install())
 #manually enter the url of required pages to be scrape
 url=['https://tyresnmore.com/all/car-tyres/toyota/fortuner/4wd.html?category_id=46&product_list_limit=30',
-     'https://tyresnmore.com/all/car-tyres/toyota/innova.html?product_list_limit=30']
+     'https://tyresnmore.com/all/car-tyres/toyota/innova.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/maruti/brezza.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/maruti/alto.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/honda/amaze.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/hyundai/eon.html?product_list_limit=300',
+    'https://tyresnmore.com/all/car-tyres/hyundai/santro.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/honda/city.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/mahindra/thar.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/mahindra/xuv-500.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/ford/figo.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/ford/aspire.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/nissan/micra.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/nissan/sunny.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/tata/indica.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/tata/indica.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/tata/nano.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/skoda/laura.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/skoda/slavia.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/renault/duster.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/renault/lodgy.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/mitsubishi/lancer.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/mitsubishi/pajero.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/mercedes-benz/a-class.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/mercedes-benz/e-class.html?product_list_limit=30',
+    'https://tyresnmore.com/all/car-tyres/fiat/punto.html?product_list_limit=30?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/fiat/linea.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/jaguar/f.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/jaguar/xk.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/chev/spark-all-models.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/chev/beat.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/bmw/7-series.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/bmw/x6.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/audi/a7.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/audi/q8.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/kia/carnival.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/kia/ev6.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/mg/hector.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/mg/astor.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/jeep/grand-cherokee.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/jeep/compass.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/volvo/s80.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/volvo/v40.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/volkswagen/passat.html?product_list_limit=30',
+     'https://tyresnmore.com/all/car-tyres/volkswagen/beetle.html?product_list_limit=30']
 
 #declaring lists
 prod_name=[]
@@ -67,8 +110,12 @@ for i in url:
         else:
             x+=1
     price = [i.replace('Special', '') for i in price]
+    price = [i.replace('₹','') for i in price]
+    price = [i.replace(' ','') for i in price]
+    price = [i.replace(',','') for i in price]
+
     
 driver.quit()
 df_final=pd.DataFrame({'Car Model':vehicle,'Brand':brand,'Product Name':prod_name,'Price':price,'Features':final_f})
     
-df_final.to_csv('final_data.csv',index=False)
+df_final.to_csv('final_data1.csv',index=False)
