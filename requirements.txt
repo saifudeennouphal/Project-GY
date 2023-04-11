@@ -1,4 +1,0 @@
-pandas==2.0.0
-streamlit==1.19.0
-selenium==4.8.2
-ChromeDriverManager==3.8.5
